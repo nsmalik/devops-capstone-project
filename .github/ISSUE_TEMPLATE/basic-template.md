@@ -1,5 +1,5 @@
 ---
-name: Basic Template
+name: User Story
 about: Base Kanban Template
 title: ''
 labels: ''
