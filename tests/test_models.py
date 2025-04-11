@@ -175,3 +175,16 @@ class TestAccount(unittest.TestCase):
         """It should not Deserialize an account with a TypeError"""
         account = Account()
         self.assertRaises(DataValidationError, account.deserialize, [])
+
+    def test_repr(self):
+        """It should return Acct name and id"""
+        fake_account = AccountFactory()
+        # pylint: disable=unexpected-keyword-arg
+        account = Account(
+            name=fake_account.name,
+            email=fake_account.email,
+            address=fake_account.address,
+            phone_number=fake_account.phone_number,
+            date_joined=fake_account.date_joined,
+        )
+        self.assertEqual(str(account), f"<Account {fake_account.name} id=[None]>")
